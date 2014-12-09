@@ -13,7 +13,8 @@ def file_location()
 end
 
 CSV.open("#{file_location}phonenumbers.csv", "wb") do |csv|
-	while counter < 100 
+	csv << ['first_name', 'last_name', 'number', 'company', 'campaign', 'notes']
+	while counter < 10000
 		csv << [Faker::Name.first_name,
 				Faker::Name.last_name,
 				Faker::PhoneNumber.cell_phone,
